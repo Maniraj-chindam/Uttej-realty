@@ -1,0 +1,146 @@
+[
+    {
+        "id": "prop-001",
+        "title": "Luxurious 3BHK in Jubilee Hills",
+        "location": "Jubilee Hills, Hyderabad",
+        "price": "₹2.5 Cr",
+        "priceValue": 25000000,
+        "bhk": "3 BHK",
+        "size": "2,450 sq.ft",
+        "type": "flat",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+        "featured": true,
+        "amenities": [
+            "Swimming Pool",
+            "Gym",
+            "24/7 Security",
+            "Club House"
+        ]
+    },
+    {
+        "id": "prop-002",
+        "title": "Premium Villa in Gachibowli",
+        "location": "Gachibowli, Hyderabad",
+        "price": "₹4.8 Cr",
+        "priceValue": 48000000,
+        "bhk": "4 BHK",
+        "size": "4,200 sq.ft",
+        "type": "villa",
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        "featured": true,
+        "amenities": [
+            "Private Garden",
+            "Home Theater",
+            "Smart Home",
+            "Modular Kitchen"
+        ]
+    },
+    {
+        "id": "prop-003",
+        "title": "Modern Apartment in Banjara Hills",
+        "location": "Banjara Hills, Hyderabad",
+        "price": "₹1.8 Cr",
+        "priceValue": 18000000,
+        "bhk": "2 BHK",
+        "size": "1,650 sq.ft",
+        "type": "flat",
+        "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+        "featured": true,
+        "amenities": [
+            "Gym",
+            "Children's Play Area",
+            "Power Backup",
+            "Parking"
+        ]
+    },
+    {
+        "id": "prop-004",
+        "title": "Independent House in Kondapur",
+        "location": "Kondapur, Hyderabad",
+        "price": "₹3.2 Cr",
+        "priceValue": 32000000,
+        "bhk": "4 BHK",
+        "size": "3,500 sq.ft",
+        "type": "house",
+        "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+        "featured": true,
+        "amenities": [
+            "Garden",
+            "Terrace",
+            "Double Car Parking",
+            "Servant Quarter"
+        ]
+    },
+    {
+        "id": "prop-005",
+        "title": "Prime Plot in Shamshabad",
+        "location": "Shamshabad, Hyderabad",
+        "price": "₹95 L",
+        "priceValue": 9500000,
+        "bhk": null,
+        "size": "400 sq.yards",
+        "type": "plot",
+        "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+        "featured": false,
+        "amenities": [
+            "Clear Title",
+            "Approved Layout",
+            "Near Airport",
+            "Road Facing"
+        ]
+    },
+    {
+        "id": "prop-006",
+        "title": "Commercial Space in HITEC City",
+        "location": "HITEC City, Hyderabad",
+        "price": "₹6.5 Cr",
+        "priceValue": 65000000,
+        "bhk": null,
+        "size": "5,000 sq.ft",
+        "type": "commercial",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+        "featured": true,
+        "amenities": [
+            "Ample Parking",
+            "High-Speed Elevators",
+            "Central AC",
+            "IT Hub Location"
+        ]
+    },
+    {
+        "id": "prop-007",
+        "title": "Luxury Penthouse in Madhapur",
+        "location": "Madhapur, Hyderabad",
+        "price": "₹5.5 Cr",
+        "priceValue": 55000000,
+        "bhk": "5 BHK",
+        "size": "5,800 sq.ft",
+        "type": "flat",
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+        "featured": true,
+        "amenities": [
+            "Rooftop Pool",
+            "360° View",
+            "Private Elevator",
+            "Wine Cellar"
+        ]
+    },
+    {
+        "id": "prop-008",
+        "title": "Gated Community Villa in Mokila",
+        "location": "Mokila, Hyderabad",
+        "price": "₹3.8 Cr",
+        "priceValue": 38000000,
+        "bhk": "4 BHK",
+        "size": "3,800 sq.ft",
+        "type": "villa",
+        "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
+        "featured": false,
+        "amenities": [
+            "Clubhouse",
+            "Sports Facilities",
+            "24/7 Security",
+            "Landscaped Gardens"
+        ]
+    }
+]

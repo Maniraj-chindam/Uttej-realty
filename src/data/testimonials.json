@@ -1,0 +1,47 @@
+[
+    {
+        "id": "test-001",
+        "name": "Rajesh Kumar",
+        "location": "Jubilee Hills",
+        "rating": 5,
+        "quote": "Uttej Realty made my dream home a reality! Their team's expertise and dedication helped me find the perfect 3BHK in my budget. The entire process was smooth and transparent.",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+        "propertyType": "3BHK Flat"
+    },
+    {
+        "id": "test-002",
+        "name": "Priya Sharma",
+        "location": "Gachibowli",
+        "rating": 5,
+        "quote": "As an NRI, I was skeptical about investing in property remotely. Uttej Realty's professional approach and regular video updates gave me complete confidence. Highly recommend!",
+        "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+        "propertyType": "Villa"
+    },
+    {
+        "id": "test-003",
+        "name": "Venkat Reddy",
+        "location": "HITEC City",
+        "rating": 5,
+        "quote": "The team at Uttej Realty helped me navigate complex documentation and negotiated the best price for my commercial property. Their market knowledge is unparalleled.",
+        "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+        "propertyType": "Commercial Space"
+    },
+    {
+        "id": "test-004",
+        "name": "Anitha Rao",
+        "location": "Kondapur",
+        "rating": 5,
+        "quote": "From property shortlisting to registration, Uttej Realty was with us every step. Their transparent pricing and no hidden charges policy won our trust.",
+        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+        "propertyType": "Independent House"
+    },
+    {
+        "id": "test-005",
+        "name": "Suresh Patil",
+        "location": "Shamshabad",
+        "rating": 5,
+        "quote": "I invested in a plot through Uttej Realty and the ROI has been excellent. Their advice on future growth areas was spot on. Thank you team!",
+        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+        "propertyType": "Open Plot"
+    }
+]

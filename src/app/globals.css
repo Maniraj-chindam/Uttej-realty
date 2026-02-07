@@ -21,10 +21,12 @@
   --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', 'Helvetica Neue', system-ui, sans-serif;
 
-  /* Transitions */
+  /* Transitions - Slowed for cinematic feel */
   --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration-slow: 800ms;
-  --duration-normal: 500ms;
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-slow: 1000ms;
+  --duration-normal: 600ms;
+  --duration-fast: 400ms;
 }
 
 /* Dark mode colors */
@@ -111,17 +113,26 @@ h6 {
     background-clip: text;
   }
 
-  /* Glass Effect */
+  /* Glass Effect - Enhanced blur for luxury feel */
   .glass {
-    background: rgba(253, 251, 247, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(253, 251, 247, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
 
   .glass-dark {
-    background: rgba(15, 15, 15, 0.9);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(15, 15, 15, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  /* Gold Glow Hover Effect */
+  .gold-glow-hover {
+    transition: all 0.6s var(--ease-luxury);
+  }
+
+  .gold-glow-hover:hover {
+    box-shadow: 0 0 30px -5px rgba(201, 169, 98, 0.4);
   }
 
   /* Subtle Border */
@@ -213,12 +224,32 @@ h6 {
 
   /* Luxury Button Primary */
   .btn-luxury {
-    @apply inline-flex items-center justify-center gap-3 bg-charcoal-900 text-ivory-100 font-sans font-medium text-sm tracking-elegant uppercase px-10 py-5 transition-all duration-600;
+    @apply inline-flex items-center justify-center gap-3 bg-charcoal-900 text-ivory-100 font-sans font-medium text-sm tracking-elegant uppercase px-10 py-5 rounded-lg transition-all duration-600;
     transition-timing-function: var(--ease-luxury);
   }
 
   .btn-luxury:hover {
     @apply bg-champagne-600 text-charcoal-900;
+    box-shadow: 0 0 40px -8px rgba(201, 169, 98, 0.5);
+  }
+
+  /* Polished Form Inputs */
+  .input-luxury {
+    @apply w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 font-sans text-charcoal-900 placeholder:text-charcoal-400 transition-all duration-400;
+    transition-timing-function: var(--ease-luxury);
+  }
+
+  .input-luxury:focus {
+    @apply bg-white border-champagne-500 ring-2 ring-champagne-500/20 outline-none;
+  }
+
+  .select-luxury {
+    @apply w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 font-sans text-charcoal-900 appearance-none cursor-pointer transition-all duration-400;
+    transition-timing-function: var(--ease-luxury);
+  }
+
+  .select-luxury:focus {
+    @apply bg-white border-champagne-500 ring-2 ring-champagne-500/20 outline-none;
   }
 
   /* Luxury Button Secondary */

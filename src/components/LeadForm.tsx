@@ -76,11 +76,8 @@ export default function LeadForm() {
         );
     }
 
-    const inputClasses = "w-full bg-transparent border-b border-charcoal-200 py-4 font-sans text-charcoal-900 placeholder:text-charcoal-400 focus:border-champagne-500 focus:outline-none transition-colors duration-400";
-    const selectClasses = "w-full bg-transparent border-b border-charcoal-200 py-4 font-sans text-charcoal-900 focus:border-champagne-500 focus:outline-none transition-colors duration-400 appearance-none cursor-pointer";
-
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5">
             {/* Name */}
             <div>
                 <input
@@ -90,7 +87,7 @@ export default function LeadForm() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Full Name"
                     required
-                    className={inputClasses}
+                    className="input-luxury"
                 />
             </div>
 
@@ -103,7 +100,7 @@ export default function LeadForm() {
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="Phone Number"
                     required
-                    className={inputClasses}
+                    className="input-luxury"
                 />
             </div>
 
@@ -115,7 +112,7 @@ export default function LeadForm() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Email Address"
-                    className={inputClasses}
+                    className="input-luxury"
                 />
             </div>
 
@@ -125,7 +122,7 @@ export default function LeadForm() {
                     name="propertyType"
                     value={formData.propertyType}
                     onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
-                    className={selectClasses}
+                    className="select-luxury"
                 >
                     {propertyTypes.map((type) => (
                         <option key={type.value} value={type.value}>
@@ -133,7 +130,7 @@ export default function LeadForm() {
                         </option>
                     ))}
                 </select>
-                <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                 </svg>
             </div>
@@ -144,7 +141,7 @@ export default function LeadForm() {
                     name="budget"
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className={selectClasses}
+                    className="select-luxury"
                 >
                     {budgetRanges.map((range) => (
                         <option key={range.value} value={range.value}>
@@ -152,7 +149,7 @@ export default function LeadForm() {
                         </option>
                     ))}
                 </select>
-                <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                 </svg>
             </div>
@@ -161,7 +158,7 @@ export default function LeadForm() {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-luxury mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-luxury mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
@@ -172,7 +169,7 @@ export default function LeadForm() {
                         Processing
                     </span>
                 ) : (
-                    "Request Callback"
+                    "Request Confidential Callback"
                 )}
             </button>
         </form>

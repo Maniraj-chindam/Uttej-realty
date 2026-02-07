@@ -40,12 +40,14 @@ export default function Header() {
             <motion.header
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                        ? "glass py-3 border-b border-charcoal-900/5"
-                        : "bg-transparent py-4"
+                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled
+                    ? "glass py-3"
+                    : "bg-transparent py-5"
                     }`}
             >
+                {/* Thin divider line when scrolled */}
+                <div className={`absolute bottom-0 left-0 right-0 h-px bg-champagne-500/20 transition-opacity duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0'}`} />
                 <div className="flex items-center justify-between px-5 md:px-8 lg:px-20">
                     {/* Logo */}
                     <Link href="/" className="flex flex-col">

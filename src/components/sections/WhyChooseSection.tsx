@@ -2,56 +2,61 @@
 
 import { motion } from "framer-motion";
 
-const trustPoints = [
-    { icon: "✓", label: "Verified Listings" },
-    { icon: "💰", label: "Negotiation Support" },
-    { icon: "⚖️", label: "Legal Assistance" },
-    { icon: "📋", label: "Registration Handling" },
-    { icon: "💎", label: "Transparent Pricing" },
-    { icon: "👤", label: "Dedicated Advisor" },
+const advantages = [
+    "Verified Properties",
+    "Transparent Pricing",
+    "Legal Support",
+    "Registration Assistance",
+    "After Sales Service",
 ];
 
 export default function WhyChooseSection() {
     return (
-        <section id="trust" className="py-16 md:py-24 lg:py-32 px-5 md:px-8 lg:px-20 bg-charcoal-900">
-            <div className="max-w-6xl mx-auto">
+        <section id="trust" className="py-20 md:py-28 lg:py-36 px-5 md:px-8 lg:px-20 bg-charcoal-900">
+            <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-center mb-10"
+                    className="text-center mb-12"
                 >
-                    <div className="flex items-center justify-center gap-3 mb-4">
-                        <span className="w-8 h-px bg-champagne-500/60" />
-                        <span className="text-champagne-400 font-sans text-[10px] uppercase tracking-[0.2em]">
+                    <div className="flex items-center justify-center gap-3 mb-6">
+                        <span className="w-10 h-px bg-champagne-500/60" />
+                        <span className="text-champagne-400 font-sans text-[10px] uppercase tracking-[0.25em]">
                             Why Us
                         </span>
-                        <span className="w-8 h-px bg-champagne-500/60" />
+                        <span className="w-10 h-px bg-champagne-500/60" />
                     </div>
 
-                    <h2 className="font-serif text-3xl md:text-4xl font-medium text-white">
+                    <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-white">
                         The Uttej Advantage
                     </h2>
                 </motion.div>
 
-                {/* Trust Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                    {trustPoints.map((point, index) => (
+                {/* Luxury Checklist */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="flex flex-wrap justify-center gap-4 md:gap-6"
+                >
+                    {advantages.map((item, index) => (
                         <motion.div
-                            key={point.label}
-                            initial={{ opacity: 0, y: 20 }}
+                            key={item}
+                            initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            transition={{ duration: 0.5, delay: 0.1 * index }}
                             viewport={{ once: true }}
-                            className="bg-charcoal-800/50 rounded-2xl p-5 md:p-6 text-center"
+                            className="flex items-center gap-3 bg-charcoal-800/50 backdrop-blur-sm rounded-full px-6 py-3 md:px-8 md:py-4"
                         >
-                            <span className="text-3xl mb-3 block">{point.icon}</span>
-                            <p className="font-sans text-sm text-white/90">{point.label}</p>
+                            <span className="text-champagne-500 text-lg">✓</span>
+                            <span className="font-sans text-sm md:text-base text-white/90">{item}</span>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

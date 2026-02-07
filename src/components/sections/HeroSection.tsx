@@ -1,8 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    // Force video play on mount (mobile browsers need this)
+    useEffect(() => {
+        const video = videoRef.current;
+        if (video) {
+            // Attempt to play video
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Autoplay was prevented, video will show poster
+                    console.log("Autoplay prevented, showing poster");
+                });
+            }
+        }
+    }, []);
+
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -15,18 +33,29 @@ export default function HeroSection() {
             id="home"
             className="relative min-h-screen flex items-end md:items-center overflow-hidden"
         >
-            {/* Background Video - Fullscreen cinematic */}
-            <div className="absolute inset-0 overflow-hidden">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                >
-                    <source src="/hero.mp4" type="video/mp4" />
-                </video>
-            </div>
+            {/* Fallback Background Image for when video doesn't play */}
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-charcoal-900"
+                style={{
+                    backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85')`,
+                }}
+            />
+
+            {/* Background Video - Mobile optimized */}
+            <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85"
+                className="absolute inset-0 w-full h-full object-cover"
+                // @ts-ignore - webkit attribute for iOS
+                webkit-playsinline="true"
+            >
+                <source src="/hero.mp4" type="video/mp4" />
+            </video>
 
             {/* Gradient Overlays - Stronger for mobile readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/90 via-charcoal-950/40 to-charcoal-950/20" />

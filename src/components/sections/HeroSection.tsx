@@ -1,25 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
 
-    // Force video play on mount (mobile browsers need this)
+    // Force video play on mount and on touch
     useEffect(() => {
         const video = videoRef.current;
-        if (video) {
-            // Attempt to play video
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    // Autoplay was prevented, video will show poster
-                    console.log("Autoplay prevented, showing poster");
-                });
+        if (!video) return;
+
+        const playVideo = () => {
+            video.play().then(() => {
+                setIsPlaying(true);
+            }).catch(() => {
+                console.log("Autoplay blocked, waiting for interaction");
+            });
+        };
+
+        // Try to play immediately
+        playVideo();
+
+        // Also try on any user interaction (mobile needs this)
+        const handleInteraction = () => {
+            if (!isPlaying) {
+                playVideo();
             }
-        }
-    }, []);
+        };
+
+        document.addEventListener("touchstart", handleInteraction, { once: true });
+        document.addEventListener("click", handleInteraction, { once: true });
+
+        return () => {
+            document.removeEventListener("touchstart", handleInteraction);
+            document.removeEventListener("click", handleInteraction);
+        };
+    }, [isPlaying]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -31,17 +49,9 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-end md:items-center overflow-hidden"
+            className="relative min-h-screen flex items-end md:items-center overflow-hidden bg-charcoal-900"
         >
-            {/* Fallback Background Image for when video doesn't play */}
-            <div
-                className="absolute inset-0 bg-cover bg-center bg-charcoal-900"
-                style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85')`,
-                }}
-            />
-
-            {/* Background Video - Mobile optimized */}
+            {/* Background Video - Full priority, no fallback image */}
             <video
                 ref={videoRef}
                 autoPlay
@@ -49,10 +59,11 @@ export default function HeroSection() {
                 muted
                 playsInline
                 preload="auto"
-                poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85"
-                className="absolute inset-0 w-full h-full object-cover"
-                // @ts-ignore - webkit attribute for iOS
-                webkit-playsinline="true"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+                style={{
+                    WebkitTransform: 'translateZ(0)',
+                    transform: 'translateZ(0)'
+                }}
             >
                 <source src="/hero.mp4" type="video/mp4" />
             </video>

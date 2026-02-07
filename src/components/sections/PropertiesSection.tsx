@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import propertiesData from "@/data/properties.json";
@@ -108,7 +108,6 @@ function PropertyCard({
 export default function PropertiesSection() {
     const [activeFilter, setActiveFilter] = useState("all");
     const [budgetFilter, setBudgetFilter] = useState("all");
-    const scrollRef = useRef<HTMLDivElement>(null);
 
     const filteredProperties = useMemo(() => {
         let filtered = propertiesData;
@@ -184,8 +183,8 @@ export default function PropertiesSection() {
                                 key={filter.value}
                                 onClick={() => setActiveFilter(filter.value)}
                                 className={`flex-shrink-0 font-sans text-xs px-4 py-2 rounded-full transition-all duration-300 ${activeFilter === filter.value
-                                        ? "bg-charcoal-900 text-white"
-                                        : "bg-white text-charcoal-600 border border-stone-200 active:bg-stone-100"
+                                    ? "bg-charcoal-900 text-white"
+                                    : "bg-white text-charcoal-600 border border-stone-200 active:bg-stone-100"
                                     }`}
                             >
                                 {filter.label}
@@ -201,8 +200,8 @@ export default function PropertiesSection() {
                                     )
                                 }
                                 className={`flex-shrink-0 font-sans text-xs px-4 py-2 rounded-full transition-all duration-300 ${budgetFilter === filter.value
-                                        ? "bg-champagne-500 text-charcoal-900"
-                                        : "bg-white text-charcoal-600 border border-stone-200 active:bg-stone-100"
+                                    ? "bg-champagne-500 text-charcoal-900"
+                                    : "bg-white text-charcoal-600 border border-stone-200 active:bg-stone-100"
                                     }`}
                             >
                                 {filter.label}
@@ -222,7 +221,6 @@ export default function PropertiesSection() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            ref={scrollRef}
                             className="flex gap-4 overflow-x-auto pl-5 pr-[25vw] md:pl-8 md:pr-8 lg:pl-20 lg:pr-20 pb-4 hide-scrollbar snap-x snap-mandatory scroll-smooth"
                             style={{
                                 scrollPaddingLeft: "20px",
